@@ -1,183 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nguyen Huu Hoang Anh | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nguyen Huu Hoang Anh Portfolio</title>
   <style>
+    /* Reset & base */
     * {
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #f8fafc, #e2e8f0);
-      color: #1e293b;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(to right, #0f172a, #1e3a8a);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-top: 1rem;
-    }
-    nav {
-      margin-top: 1.5rem;
-    }
-    nav a {
-      color: #e0e7ff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-    section.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      color: #0f172a;
-      font-size: 2rem;
-      border-left: 5px solid #3b82f6;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: white;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    li:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 30px rgba(0,0,0,0.1);
-    }
-    blockquote {
-      font-style: italic;
-      color: #475569;
-      background: #f1f5f9;
-      padding: 1rem 1.5rem;
-      border-left: 5px solid #3b82f6;
-      margin: 2rem 0;
-      border-radius: 0.5rem;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
     }
     a {
-      color: #3b82f6;
+      color: #58a6ff;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     a:hover {
-      text-decoration: underline;
+      color: #1f6feb;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #0f172a;
-      color: white;
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: #161b22;
+      border-radius: 10px;
+      padding: 2rem 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    header img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #58a6ff;
+    }
+    header div {
+      flex-grow: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #58a6ff;
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      color: #8b949e;
+      font-size: 1.1rem;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .skill {
+      background: #21262d;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #c9d1d9;
+      box-shadow: 0 0 10px #58a6ff33;
+      transition: transform 0.2s ease;
+    }
+    .skill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #58a6ffaa;
+    }
+
+    /* Projects */
+    .project {
+      background: #21262d;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px #0008;
+      transition: box-shadow 0.3s ease;
+    }
+    .project:hover {
+      box-shadow: 0 6px 20px #58a6ff88;
+    }
+    .project h3 {
+      margin-bottom: 0.3rem;
+      color: #58a6ff;
+    }
+    .project p {
+      font-size: 0.95rem;
+      color: #8b949e;
+      margin-bottom: 0.5rem;
+    }
+    .project a {
       font-size: 0.9rem;
+      font-weight: 600;
     }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .contact-list li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /* Responsive */
     @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0.5rem;
+      }
       header h1 {
         font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Nguyen Huu Hoang Anh</h1>
-    <p>Freelance Developer | Passionate about AI, Web & Game Dev</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <main class="container">
+    <header>
+      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Avatar" />
+      <div>
+        <h1>Nguyen Huu Hoang Anh</h1>
+        <p>Freelance Developer | Passionate about AI, Web & Game Dev</p>
+      </div>
+    </header>
 
-  <section id="about">
-    <h2>👋 About Me</h2>
-    <p>
-      Hello! I'm <strong>Nguyen Huu Hoang Anh</strong>, a high school student from Vietnam and a self-taught freelance developer passionate about <strong>Artificial Intelligence, Web Development, and Game Programming</strong>.
-    </p>
-    <p>
-      Since early high school, I've been working with <strong>Python, C++, HTML/CSS</strong>, and building real-world projects to sharpen my skills. I'm currently learning German to pursue my dream of studying <strong>Computer Science</strong> at a top university in Germany.
-    </p>
-    <p>
-      I love solving problems with code, turning ideas into useful applications, and constantly challenging myself to grow as a developer.
-    </p>
-    <blockquote>
-      “Code is my language. Learning is my mindset. The future is my project.”
-    </blockquote>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm a high school student and self-taught developer passionate about Artificial Intelligence, Web Development, and Game Programming.</p>
+      <p>I love solving problems with code, building projects, and learning new technologies every day.</p>
+    </section>
 
-  <section id="projects">
-    <h2>✨ Projects</h2>
-    <ul>
-      <li><em>Projects will be added here soon...</em></li>
-    </ul>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill">Python</span>
+        <span class="skill">C++</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">React</span>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>💌 Contact</h2>
-    <ul>
-      <li>📧 Email: <a href="mailto:bobnnguyen.dev@gmail.com">bobnnguyen.dev@gmail.com</a></li>
-      <li>🐳 GitHub: <a href="https://github.com/BobNguyen-Dev" target="_blank">github.com/BobNguyen-Dev</a></li>
-      <li>👤 LinkedIn: <a href="https://www.linkedin.com/in/nguyen-huu-hoang-anh-a39bb9371" target="_blank">Nguyen Huu Hoang Anh</a></li>
-    </ul>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>AI Chatbot</h3>
+        <p>A simple chatbot using Python and machine learning techniques.</p>
+        <a href="#">View Code</a>
+      </div>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>This portfolio website built with HTML, CSS, and JavaScript.</p>
+        <a href="#">View Code</a>
+      </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Nguyen Huu Hoang Anh. All rights reserved.
-  </footer>
-
-  <script>
-    const sections = document.querySelectorAll('section');
-    const revealSection = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const boxTop = section.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          section.classList.add('reveal');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealSection);
-    window.addEventListener('load', revealSection);
-  </script>
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:bobnnguyen.dev@gmail.com">bobnnguyen.dev@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/BobNguyen-Dev" target="_blank">github.com/BobNguyen-Dev</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/nguyen-huu-hoang-anh-a39bb9371" target="_blank">Nguyen Huu Hoang Anh</a></li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
