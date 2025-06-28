@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Huu Hoang Anh | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f8fafc, #e2e8f0);
+      color: #1e293b;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(to right, #0f172a, #1e3a8a);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+    nav {
+      margin-top: 1.5rem;
+    }
+    nav a {
+      color: #e0e7ff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #0f172a;
+      font-size: 2rem;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    li:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.1);
+    }
+    blockquote {
+      font-style: italic;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 1rem 1.5rem;
+      border-left: 5px solid #3b82f6;
+      margin: 2rem 0;
+      border-radius: 0.5rem;
+    }
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0f172a;
+      color: white;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nguyen Huu Hoang Anh</h1>
+    <p>Freelance Developer | Passionate about AI, Web & Game Dev</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>👋 About Me</h2>
+    <p>
+      Hello! I'm <strong>Nguyen Huu Hoang Anh</strong>, a high school student from Vietnam and a self-taught freelance developer passionate about <strong>Artificial Intelligence, Web Development, and Game Programming</strong>.
+    </p>
+    <p>
+      Since early high school, I've been working with <strong>Python, C++, HTML/CSS</strong>, and building real-world projects to sharpen my skills. I'm currently learning German to pursue my dream of studying <strong>Computer Science</strong> at a top university in Germany.
+    </p>
+    <p>
+      I love solving problems with code, turning ideas into useful applications, and constantly challenging myself to grow as a developer.
+    </p>
+    <blockquote>
+      “Code is my language. Learning is my mindset. The future is my project.”
+    </blockquote>
+  </section>
+
+  <section id="projects">
+    <h2>✨ Projects</h2>
+    <ul>
+      <li><em>Projects will be added here soon...</em></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>💌 Contact</h2>
+    <ul>
+      <li>📧 Email: <a href="mailto:bobnnguyen.dev@gmail.com">bobnnguyen.dev@gmail.com</a></li>
+      <li>🐳 GitHub: <a href="https://github.com/BobNguyen-Dev" target="_blank">github.com/BobNguyen-Dev</a></li>
+      <li>👤 LinkedIn: <a href="https://www.linkedin.com/in/nguyen-huu-hoang-anh-a39bb9371" target="_blank">Nguyen Huu Hoang Anh</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Nguyen Huu Hoang Anh. All rights reserved.
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const revealSection = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          section.classList.add('reveal');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealSection);
+    window.addEventListener('load', revealSection);
+  </script>
+</body>
+</html>
